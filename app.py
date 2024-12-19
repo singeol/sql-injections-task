@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Параметры подключения к PostgreSQL
-DB_NAME = 'sql_injections' 
+DB_NAME = 'lab_injections' 
 DB_USER = 'postgres'
 DB_PASSWORD = 'postgres'
 DB_HOST = 'localhost'

@@ -1,7 +1,7 @@
 import psycopg2
 
 # Параметры подключения к PostgreSQL (при необходимости измените)
-DB_NAME = 'example'
+DB_NAME = 'lab_injections'
 DB_USER = 'postgres'
 DB_PASSWORD = 'postgres'
 DB_HOST = 'localhost'
