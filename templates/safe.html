@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Безопасный запрос</h2>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Введите имя пользователя">
+        <input type="submit" value="Поиск">
+    </form>
+    
+    {% if results %}
+    <div class="results">
+        {{ results }}
+    </div>
+    {% endif %}
+    
+    <div class="note">
+        Здесь используется параметризованный запрос, попробуйте те же инъекции, они не сработают.
+    </div>
+{% endblock %}

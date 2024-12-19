@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Уязвимый запрос</h2>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Введите имя пользователя или вредоносный код">
+        <input type="submit" value="Поиск / Выполнить">
+    </form>
+    
+    {% if results %}
+    <div class="results">
+        {{ results }}
+    </div>
+    {% endif %}
+    
+    <div class="note">
+        Попробуйте следующие инъекции:
+        <ul>
+            <li>' OR '1'='1</li>
+            <li>'; DROP TABLE products; --</li>
+            <li>'; UPDATE users SET password = 'новый_пароль_для_Alice' WHERE username = 'alice'; --</li>
+            <li>' UNION SELECT u.username, r.role FROM users u JOIN roles r ON u.id = r.user_id; --</li>
+        </ul>
+    </div>
+{% endblock %}
